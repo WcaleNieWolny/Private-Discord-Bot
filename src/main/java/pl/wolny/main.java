@@ -10,6 +10,7 @@ import pl.wolny.cmds.PurgeCmd;
 import pl.wolny.cmds.warns.WarnCmd;
 import pl.wolny.cmds.warns.WarnsCmd;
 import pl.wolny.events.MessageReciveEvent;
+import pl.wolny.events.PreventPing;
 
 import javax.security.auth.login.LoginException;
 import pl.wolny.cmds.ticket.*;
@@ -38,6 +39,6 @@ public class main {
                 .enableIntents(GatewayIntent.GUILD_MESSAGE_REACTIONS)
                 .enableIntents(GatewayIntent.GUILD_PRESENCES)
                 .build();
-        jda.addEventListener();
+        jda.addEventListener(new PreventPing());
     }
 }
