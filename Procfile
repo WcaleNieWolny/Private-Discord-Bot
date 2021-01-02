@@ -1,1 +1,1 @@
-Worker: java -jar src/main/java/pl/wolny/main.java
+Worker: java -jar build/libs/JungleBotNew-1.0-all.jar
