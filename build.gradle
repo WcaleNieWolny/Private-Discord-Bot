@@ -1,0 +1,31 @@
+plugins {
+    id'application'
+    id'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+mainClassName = 'pl.wolny.main'
+
+version '1.0'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compile("net.dv8tion:JDA:4.2.0_222")
+    compile 'io.github.cdimascio:dotenv-java:2.2.0'
+    compile 'org.yaml:snakeyaml:1.12'
+    implementation("com.google.guava:guava:30.1-jre")
+    compile 'org.apache.commons:commons-lang3:3.0'
+    compile 'com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT'
+    compile "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+    compile "mysql:mysql-connector-java:8.0.22"
+}
+
+compileJava.options.encoding = 'UTF-8'
