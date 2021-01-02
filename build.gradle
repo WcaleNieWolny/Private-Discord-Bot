@@ -16,6 +16,8 @@ repositories {
         url 'https://papermc.io/repo/repository/maven-public/'
     }
 }
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
 
 dependencies {
     compile("net.dv8tion:JDA:4.2.0_222")
