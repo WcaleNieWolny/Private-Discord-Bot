@@ -19,10 +19,6 @@ import java.sql.*;
 
 public class main {
     public static void main(String[] args) throws SQLException {
-        Class c = main.class;
-        String className = c.getName();
-        System.out.println("The fully-qualified name of the class is: " + className);
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         try {
             DiscordBot();
         } catch (LoginException e) {
