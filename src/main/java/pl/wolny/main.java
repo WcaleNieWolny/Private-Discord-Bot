@@ -30,35 +30,14 @@ public class main {
     }
 
     private static void DiscordBot() throws LoginException {
-        Dotenv dotenv = Dotenv.load();
-        if(dotenv.get("LOL-BOT").equalsIgnoreCase("true")){
-            JDA jda = JDABuilder.createDefault(dotenv.get("TOKEN"))
-                    .setMemberCachePolicy(MemberCachePolicy.ALL)
-                    .enableIntents(GatewayIntent.GUILD_MEMBERS)
-                    .enableIntents(GatewayIntent.DIRECT_MESSAGES)
-                    .enableIntents(GatewayIntent.GUILD_MESSAGES)
-                    .enableIntents(GatewayIntent.GUILD_MESSAGE_REACTIONS)
-                    .enableIntents(GatewayIntent.GUILD_PRESENCES)
-                    .build();
-            jda.addEventListener();
-        }else {
-            JDA jda = JDABuilder.createDefault(dotenv.get("TOKEN"))
-                    .setMemberCachePolicy(MemberCachePolicy.ALL)
-                    .enableIntents(GatewayIntent.GUILD_MEMBERS)
-                    .enableIntents(GatewayIntent.DIRECT_MESSAGES)
-                    .enableIntents(GatewayIntent.GUILD_MESSAGES)
-                    .enableIntents(GatewayIntent.GUILD_MESSAGE_REACTIONS)
-                    .enableIntents(GatewayIntent.GUILD_PRESENCES)
-                    .build();
-            jda.addEventListener(new MessageReciveEvent());
-            jda.addEventListener(new PurgeCmd());
-            jda.addEventListener(new AvatarCmd());
-            jda.addEventListener(new WarnsCmd());
-            jda.addEventListener(new WarnCmd());
-            jda.addEventListener(new CreateTicket());
-            jda.addEventListener(new ReactEvent());
-            jda.addEventListener(new AddUserToTicket());
-        }
+        JDA jda = JDABuilder.createDefault(System.getenv("TOKEN"))
+                .setMemberCachePolicy(MemberCachePolicy.ALL)
+                .enableIntents(GatewayIntent.GUILD_MEMBERS)
+                .enableIntents(GatewayIntent.DIRECT_MESSAGES)
+                .enableIntents(GatewayIntent.GUILD_MESSAGES)
+                .enableIntents(GatewayIntent.GUILD_MESSAGE_REACTIONS)
+                .enableIntents(GatewayIntent.GUILD_PRESENCES)
+                .build();
+        jda.addEventListener();
     }
-
 }
