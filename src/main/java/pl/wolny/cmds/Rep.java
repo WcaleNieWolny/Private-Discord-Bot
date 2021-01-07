@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.entities.PermissionOverride;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class rep extends ListenerAdapter {
+public class Rep extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String[] msg = event.getMessage().getContentRaw().split(" ");
         if(msg[0].equalsIgnoreCase("?rep")){

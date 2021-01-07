@@ -1,19 +1,14 @@
 package pl.wolny;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
-import pl.wolny.cmds.AvatarCmd;
-import pl.wolny.cmds.PurgeCmd;
-import pl.wolny.cmds.warns.WarnCmd;
-import pl.wolny.cmds.warns.WarnsCmd;
-import pl.wolny.events.MessageReciveEvent;
+import pl.wolny.cmds.InviteEvent;
+import pl.wolny.cmds.Rep;
 import pl.wolny.events.PreventPing;
 
 import javax.security.auth.login.LoginException;
-import pl.wolny.cmds.ticket.*;
 
 import java.sql.*;
 
@@ -36,6 +31,7 @@ public class main {
                 .enableIntents(GatewayIntent.GUILD_PRESENCES)
                 .build();
         jda.addEventListener(new PreventPing());
-        jda.addEventListener(new pl.wolny.cmds.rep());
+        jda.addEventListener(new Rep());
+        jda.addEventListener(new InviteEvent());
     }
 }
