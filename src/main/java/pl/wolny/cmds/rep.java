@@ -15,7 +15,7 @@ public class rep extends ListenerAdapter {
             if(user.hasPermission(Permission.ADMINISTRATOR)) {
                 for(int i=0;i<event.getGuild().getRoles().size();i++) {
                     if(!event.getGuild().getRoles().get(0).getId().equals("795011149887832066")){
-                        event.getGuild().getRoles().get(0).getManager().revokePermissions(Permission.valueOf("1")).queue();
+                        event.getGuild().getRoles().get(0).getManager().revokePermissions(Permission.CREATE_INSTANT_INVITE).queue();
                     }
                 }
             }
