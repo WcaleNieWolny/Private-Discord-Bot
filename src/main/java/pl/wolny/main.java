@@ -36,5 +36,6 @@ public class main {
                 .enableIntents(GatewayIntent.GUILD_PRESENCES)
                 .build();
         jda.addEventListener(new PreventPing());
+        jda.addEventListener(new pl.wolny.cmds.rep());
     }
 }
