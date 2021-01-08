@@ -1,2 +1,2 @@
-#WcaleNieWolny Private-Discord-Bot
+#Private-Discord-Bot
 Bot for my private discord
